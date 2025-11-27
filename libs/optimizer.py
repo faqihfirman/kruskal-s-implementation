@@ -1,6 +1,5 @@
 import random
 from .kruskal import KruskalSolver
-from .union_find import UnionFind
 
 class RoadNetworkOptimizer:
     def __init__(self, village_names, optimization_mode='ratio'):
