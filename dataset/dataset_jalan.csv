@@ -1,13 +1,13 @@
 Asal,Tujuan,Jarak (Km),Biaya (Juta Rp),Benefit (Skor 1-100)
 Desa Cahaya,Desa Petir,12,100,90
-Desa Cahaya,Desa Tirta,8,80,50
+Desa Cahaya,Desa Air,8,80,50
 Desa Petir,Desa Bumi,15,120,85
 Desa Petir,Desa Api,22,200,40
-Desa Tirta,Desa Bumi,6,60,70
+Desa Air,Desa Bumi,6,60,70
 Desa Bumi,Desa Kayu,18,150,80
 Desa Api,Desa Kayu,10,90,60
 Desa Kayu,Desa Langit,14,110,50
 Desa Cahaya,Desa Api,35,300,20
-Desa Tirta,Desa Langit,20,180,95
+Desa Air,Desa Langit,20,180,95
 Desa Bumi,Desa Langit,16,130,40
-Desa Petir,Desa Tirta,5,50,20
+Desa Petir,Desa Air,5,50,20
