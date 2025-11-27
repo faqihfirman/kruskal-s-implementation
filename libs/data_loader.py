@@ -49,6 +49,6 @@ class DataLoader:
             except KeyError as e:
                 print(f"[Warning] Desa {e} tidak terdaftar di mapping. Baris dilewati.")
                 
-        print(f"✅ DataLoader: Berhasil memuat {len(village_names)} desa dan {len(road_data)} rute jalan.")
+        print(f"DataLoader: Berhasil memuat {len(village_names)} desa dan {len(road_data)} rute jalan.")
         
         return village_names, road_data
