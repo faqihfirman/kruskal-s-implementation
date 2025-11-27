@@ -34,7 +34,7 @@ class NetworkVisualizer:
                       node_color='#3498db', 
                       currency_code="IDR"):
         
-        plt.figure(figsize=(14, 9))
+        plt.figure(figsize=(12, 9))
         
         G = nx.Graph()
         G.add_nodes_from(range(optimizer.total_villages))
@@ -77,7 +77,7 @@ class NetworkVisualizer:
                        mst_edge_color='#2ecc71',
                        currency_code="IDR"):
         
-        plt.figure(figsize=(14, 9))
+        plt.figure(figsize=(12, 9))
         
         G = nx.Graph()
         G.add_nodes_from(range(optimizer.total_villages))
