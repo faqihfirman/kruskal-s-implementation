@@ -140,18 +140,18 @@ class NetworkVisualizer:
             label_weight = "Ratio (C/B)"
             note_text = "*Note: Mode RATIO (Semakin kecil rasio = Semakin Efisien)"
 
-        print(f"\n{'='*95}")
+        print(f"\n{'='*80}")
         print(f"LAPORAN KEPUTUSAN PEMBANGUNAN JALAN DESA (MODE: {current_mode.upper()})")
-        print(f"{'='*95}")
+        print(f"{'='*80}")
         print(f"Total Usulan Masuk   : {total_proposals} ruas")
         print(f"Total Jalan Dibangun : {total_built} ruas")
         print(f"Total Panjang Jalan  : {total_distance} km")
         print(f"Total Anggaran       : {formatted_total_cost}")
         print(f"Total Dampak Ekonomi : {stats['total_benefit']} Poin")
-        print("-" * 95)
+        print("-" * 80)
         
         print(f"{'Rute Terpilih':<30} | {'Jarak':<10} | {'Biaya':<12} | {'Benefit':<8} | {label_weight:<12}")
-        print("-" * 95)
+        print("-" * 80)
 
         for item in mst_result:
             u_name = optimizer.village_names[item['u']]
@@ -165,5 +165,5 @@ class NetworkVisualizer:
             
             print(f"{nama_rute:<30} | {dist_str:<10} | {cost_str:<12} | {item['real_benefit']:<8} | {item['weight']:.2f}")
 
-        print("-" * 95)
+        print("-" * 80)
         print(note_text) 
