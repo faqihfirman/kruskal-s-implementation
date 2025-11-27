@@ -1,4 +1,4 @@
-from union_find import UnionFind
+from .union_find import UnionFind
 
 class KruskalSolver:
     def __init__(self, num_nodes, edges):

@@ -1,5 +1,5 @@
 import random
-from kruskal import KruskalSolver
+from .kruskal import KruskalSolver
 
 class RoadNetworkOptimizer:
     def __init__(self, village_names):
