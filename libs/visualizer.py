@@ -57,7 +57,7 @@ class NetworkVisualizer:
             
             dist_val = road.get('distance', 0)
             
-            info = f"Jarak: {dist_val} km\nBiaya: {cost_str}\nBen: {road['real_benefit']}"
+            info = f"Jarak: {dist_val} km\nBiaya: {cost_str}\nBenefit: {road['real_benefit']}"
             plt.text(mid_x, mid_y, info, fontsize=7, color='black', 
                      ha='center', va='center', 
                      bbox=dict(facecolor='white', alpha=0.8, edgecolor='#bdc3c7', boxstyle='round,pad=0.2'))
@@ -106,7 +106,7 @@ class NetworkVisualizer:
             
             dist_val = road.get('distance', 0)
             
-            info = f"Jarak: {dist_val} km\nBiaya: {cost_str}\nBen: {road['real_benefit']}"
+            info = f"Jarak: {dist_val} km\nBiaya: {cost_str}\nBenefit: {road['real_benefit']}"
             
             plt.text(mid_x, mid_y, info, fontsize=8, color='darkgreen', 
                      ha='center', va='center', weight='bold',
