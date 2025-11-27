@@ -5,12 +5,10 @@ class NetworkVisualizer:
     
     @staticmethod
     def _get_layout(G, seed=42):
-
         return nx.spring_layout(G, k=5, iterations=50, seed=seed)
 
     @staticmethod
     def _format_currency(value, currency_code="IDR"):
- 
         if value >= 1000:
             val_m = value / 1000
             return f"{currency_code} {val_m:g} M"
@@ -57,7 +55,9 @@ class NetworkVisualizer:
             
             cost_str = NetworkVisualizer._format_currency(road['real_cost'], currency_code)
             
-            info = f"Biaya: {cost_str}\nBenefit: {road['real_benefit']}"
+            dist_val = road.get('distance', 0)
+            
+            info = f"Jarak: {dist_val} km\nBiaya: {cost_str}\nBen: {road['real_benefit']}"
             plt.text(mid_x, mid_y, info, fontsize=7, color='black', 
                      ha='center', va='center', 
                      bbox=dict(facecolor='white', alpha=0.8, edgecolor='#bdc3c7', boxstyle='round,pad=0.2'))
@@ -104,7 +104,9 @@ class NetworkVisualizer:
             
             cost_str = NetworkVisualizer._format_currency(road['real_cost'], currency_code)
             
-            info = f"Biaya: {cost_str}\nBenefit: {road['real_benefit']}"
+            dist_val = road.get('distance', 0)
+            
+            info = f"Jarak: {dist_val} km\nBiaya: {cost_str}\nBen: {road['real_benefit']}"
             
             plt.text(mid_x, mid_y, info, fontsize=8, color='darkgreen', 
                      ha='center', va='center', weight='bold',

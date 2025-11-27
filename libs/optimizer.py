@@ -1,37 +1,42 @@
 import random
 from .kruskal import KruskalSolver
+from .union_find import UnionFind
 
 class RoadNetworkOptimizer:
-    def __init__(self, village_names):
+    def __init__(self, village_names, optimization_mode='ratio'):
+     
         self.village_names = village_names
         self.total_villages = len(village_names)
         self.potential_roads = []
+        self.mode = optimization_mode 
         
         self.village_coordinates = {
-            i: (random.randint(0, 100), random.randint(0, 100)) 
+            i: (random.randint(5, 95), random.randint(5, 95)) 
             for i in range(self.total_villages)
         }
 
-    def register_road_proposal(self, u, v, construction_cost, economic_impact):
-        if economic_impact == 0: economic_impact = 0.00001
-     
-        efficiency_ratio = construction_cost / economic_impact
+    def register_road_proposal(self, u, v, cost, benefit=1):
+       
+        if benefit == 0: benefit = 0.001
         
-        road_data = {
+        if self.mode == 'distance':
+            weight = cost
+        else:
+            weight = cost / benefit
+        
+        self.potential_roads.append({
             'u': u,
             'v': v,
-            'weight': efficiency_ratio, 
-            'real_cost': construction_cost,
-            'real_benefit': economic_impact
-        }
-        
-        self.potential_roads.append(road_data)
+            'weight': weight,      
+            'real_cost': cost,      
+            'real_benefit': benefit 
+        })
 
     def optimize_network_budget(self):
         solver = KruskalSolver(self.total_villages, self.potential_roads)
         mst_edges = solver.find_mst()
-        summary = {'total_cost': 0, 'total_benefit': 0}
         
+        summary = {'total_cost': 0, 'total_benefit': 0}
         for edge in mst_edges:
             summary['total_cost'] += edge['real_cost']
             summary['total_benefit'] += edge['real_benefit']
